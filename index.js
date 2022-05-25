@@ -3,6 +3,7 @@ var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
 const e = require('express');
+const path =require('path');
 
 // used to serve static files from public directory
 app.use(express.static('public'));
@@ -97,7 +98,17 @@ app.get('/account/all', function (req, res) {
             res.send(docs);
     });
 });
+//Serve static assets if in production
+if(process.env.NODE_ENV ==='production'){
+//set a static folder
+app.use(express.static('public/build'));
 
-var port = 3000;
+app.get('*', (req, resp)=>{
+    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
+
+})
+}
+
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Running on port: ' + port);
