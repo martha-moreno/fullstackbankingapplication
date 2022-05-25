@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build":  "react-scripts build"
+    "build": "cd public/ && npm install && npm build"
   },
   "author": "abel@mit.edu",
   "license": "MIT",
