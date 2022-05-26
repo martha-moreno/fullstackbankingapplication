@@ -16,5 +16,8 @@
     "react-router-dom": "^6.3.0",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.4.0"
+  },
+  "engines":{
+    "node":"v16.14.2"
   }
 }
