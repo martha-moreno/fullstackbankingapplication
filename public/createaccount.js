@@ -55,8 +55,8 @@ function CreateForm(props){
             ctx.balance=data.balance;     
     })();
     
-    console.log('you are logged in from create account setIsLoggedIn', isLoggedIn);
-    console.log('ctx.isLoggedIn in create account', ctx.isLoggedIn);
+    //console.log('you are logged in from create account setIsLoggedIn', isLoggedIn);
+    //console.log('ctx.isLoggedIn in create account', ctx.isLoggedIn);
   }    
   
   return (<>
