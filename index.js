@@ -134,6 +134,13 @@ app.get('/account/all', function (req, res) {
             res.send(docs);
     });
 });
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('public/build'));
+}
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'public/build', 'index.html'));
+});
 //Serve static assets if in production
 //if(process.env.NODE_ENV ==='production'){
 //set a static folder
