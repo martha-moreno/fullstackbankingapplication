@@ -4,7 +4,7 @@ var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
 const e = require('express');
-const path =require('path');
+//const path =require('path');
 const swaggerJsDoc=require('swagger-jsdoc');
 const swaggerUI=require('swagger-ui-express');
 
@@ -140,10 +140,10 @@ app.get('/account/all', function (req, res) {
 //set a static folder
 //app.use(express.static('public/build'));
 
-app.get('*', (req, resp)=>{
-    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
+//app.get('*', (req, resp)=>{
+ //   res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
 
-})
+//})
 //}
 
 const port = process.env.PORT || 3000;

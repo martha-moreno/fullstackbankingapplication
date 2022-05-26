@@ -47,7 +47,7 @@ function CreateForm(props){
         var data = await res.json();    
         console.log(data);   
         props.setShow(false);
-    props.setIsLoggedIn(true);
+    //props.setIsLoggedIn(true);
     ctx.isLoggedIn=true;
             ctx.name=data.name;
             ctx.email=data.email;
