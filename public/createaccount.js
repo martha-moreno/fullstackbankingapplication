@@ -24,7 +24,7 @@ function CreateMsg(props){
 
   return(<>
     <h5>Your account was successfully created</h5>
-    {alert("Your account was successfully created.<br>You are now logged in!")}
+    {/*alert("Your account was successfully created.<br>You are now logged in!")*/}
     {window.location.href = "#/"}
   </>);
 }
