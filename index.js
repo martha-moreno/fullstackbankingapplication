@@ -4,7 +4,6 @@ var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
 const e = require('express');
-//const path =require('path');
 const swaggerJsDoc=require('swagger-jsdoc');
 const swaggerUI=require('swagger-ui-express');
 
@@ -26,17 +25,6 @@ app.use('/apiDocs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 app.use(express.static('public'));
 app.use(cors());
 //added to fix
-app.get('/', (req, res, next) => {
-
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'name of your app',
-            version: '0.1.0'
-        }
-    });
-
-});
 
 // create user account
 app.get('/account/create/:name/:email/:password', function (req, res) {
