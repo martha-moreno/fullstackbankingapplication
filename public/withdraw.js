@@ -52,7 +52,9 @@ function WithdrawForm(props) {
           const data = JSON.parse(text);
           //props.setStatus(data.value.balance);
           props.setShow(false);
-          console.log("JSON:", data);
+         // console.log("JSON:", data);
+         ctx.balance=data.value.balance;
+         console.log('data.value.balance',data.value.balance)
         } catch (err) {
           props.setStatus("Deposit failed");
           console.log("err:", text);

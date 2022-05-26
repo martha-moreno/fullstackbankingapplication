@@ -47,11 +47,17 @@ function DepositForm(props){
     fetch(`/account/update/${ctx.email}/${amount}`)
     .then(response => response.text())
     .then(text => {
-        try {
-            const data = JSON.parse(text);
-            //props.setStatus(JSON.stringify(data.value));
-            props.setShow(false);
-            ctx.isLoggedIn=true;
+      try {
+        const data = JSON.parse(text);
+        props.setStatus(JSON.stringify(data.value));
+        props.setShow(false);
+        ctx.isLoggedIn=true;
+        //console.log('JSON:', data);
+        console.log('data.value',JSON.stringify(data.value.balance));
+
+
+        
+            
         } catch(err) {
             props.setStatus('Deposit failed')
             console.log('err:', text);
