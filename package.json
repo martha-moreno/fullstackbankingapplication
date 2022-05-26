@@ -4,7 +4,7 @@
   "description": "lowdb sample for 1.125",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
     
   },
   "author": "abel@mit.edu",
