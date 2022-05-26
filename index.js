@@ -1,13 +1,31 @@
+require("dotenv").config({path:"./config.env"});
 var express = require('express');
 var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
 const e = require('express');
 const path =require('path');
+const swaggerJsDoc=require('swagger-jsdoc');
+const swaggerUI=require('swagger-ui-express');
+
+const swaggerOptions = {
+    swaggerDefinition:{
+        info:{
+            title: 'Bank API',
+            version: '1.0.0'
+        }
+    },
+    apis:['index.js']
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/apiDocs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+
 
 // used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
+
 
 // create user account
 app.get('/account/create/:name/:email/:password', function (req, res) {
@@ -65,7 +83,16 @@ app.get('/account/find/:email', function (req, res) {
             res.send(user);
     });
 });
-
+/**
+ * @swagger
+ * /account/findOne/martha@email.com:
+ *  get:
+ *      description: Retrieves account from entered email
+ *      responses:  
+ *              200:
+ *                  description:Success
+ * 
+ */
 // find one user by email - alternative to find
 app.get('/account/findOne/:email', function (req, res) {
 
@@ -89,6 +116,16 @@ app.get('/account/update/:email/:amount', function (req, res) {
     });    
 });
 
+/**
+ * @swagger
+ * /all:
+ *  get:
+ *      description: Display all user accounts
+ *      responses:  
+ *              200:
+ *                  description:Success
+ * 
+ */
 // all accounts
 app.get('/account/all', function (req, res) {
 

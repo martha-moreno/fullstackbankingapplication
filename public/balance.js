@@ -4,6 +4,8 @@ function Balance(){
   const ctx= React.useContext(UserContext);
   
   return (
+    <> 
+    <NavBar/>
     <Card
       bgcolor="info"
       header="Balance"
@@ -16,6 +18,7 @@ function Balance(){
         )
       }
     />
+    </>
   )
 
 }
@@ -26,15 +29,15 @@ function BalanceMsg(props){
   const [status, setStatus] = React.useState(''); 
   return(<>
     
-    <h5>Your current balance is: ${ctx.balance}</h5>
-    <button type="submit" 
+    <h5 className="message">Your current balance is: ${ctx.balance}</h5>
+    {/*<button type="submit" 
       className="btn btn-light" 
       onClick={() => {
         props.setShow(true);
         props.setStatus('');
       }}>
         Check balance again
-    </button>
+    </button>*/}
   </>);
 }
 
@@ -49,7 +52,7 @@ function BalanceForm(props) {
       .then((text) => {
         try {
           const data = JSON.parse(text);
-          props.setStatus(data.balance);
+          //props.setStatus(data.balance);
           props.setShow(false);
           setBalance(data.balance);
 

@@ -3,6 +3,9 @@ function Withdraw(){
   const [status, setStatus] = React.useState('');  
   const ctx= React.useContext(UserContext);
   return (
+    <>
+      <NavBar/>
+    
     <Card
       bgcolor="success"
       header="Withdraw"
@@ -15,6 +18,7 @@ function Withdraw(){
         )
         }
     />
+    </>
   )
 }
 
@@ -23,13 +27,13 @@ function WithdrawMsg(props){
   const [amount, setAmount] = React.useState('');
   const ctx= React.useContext(UserContext);
   return(<>
-    <h5>Your withdrawal Transaction was successful</h5>
+    <h5 className="message">Your withdrawal Transaction was successful</h5>
     <button type="submit" 
       className="btn btn-light" 
       onClick={() => {
         props.setShow(true);
         props.setStatus('');
-        console.log('ctx in withdraw success',ctx)
+        
       }}>
         Withdraw again
     </button>
@@ -46,7 +50,7 @@ function WithdrawForm(props) {
       .then((text) => {
         try {
           const data = JSON.parse(text);
-          props.setStatus(data.value.balance);
+          //props.setStatus(data.value.balance);
           props.setShow(false);
           console.log("JSON:", data);
         } catch (err) {

@@ -5,6 +5,9 @@ function Deposit(){
   const ctx= React.useContext(UserContext);
   
   return (
+    <>
+      <NavBar/>
+    
     <Card
       bgcolor="warning"
       header="Deposit"
@@ -13,6 +16,7 @@ function Deposit(){
         <DepositForm setShow={setShow} setStatus={setStatus}/> :
         <DepositMsg setShow={setShow} setStatus={setStatus}/>}
     />
+    </>
   )
 }
 
@@ -21,7 +25,7 @@ function DepositMsg(props){
   const ctx= React.useContext(UserContext);
   
   return (<>
-    <h5>Your deposit transaction was successful</h5>
+    <h5 className="message">Your deposit transaction was successful</h5>
     <button type="submit" 
       className="btn btn-light" 
       onClick={() => {
@@ -45,7 +49,7 @@ function DepositForm(props){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            props.setStatus(JSON.stringify(data.value));
+            //props.setStatus(JSON.stringify(data.value));
             props.setShow(false);
             ctx.isLoggedIn=true;
         } catch(err) {

@@ -2,7 +2,7 @@
 function NavBar(){
   
   const ctx= React.useContext(UserContext);
-  const [isLoggedIn, setIsLoggedIn]   = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn]   = React.useState(null);
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState(null);
   
@@ -24,23 +24,26 @@ function NavBar(){
     ctx.balance = 0;
     ctx.isLoggedIn = false;
    console.log('ctx in logout',ctx);
-    window.location.href = "#/";
+   setIsLoggedIn(false);
+    
+    {alert("You are logged out")}
   }
   
 
   return(
-  
+    
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <a className="navbar-brand" href="#">BadBank</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
         
-        <ul className="navbar-nav">
+       
+        {!ctx.isLoggedIn ? ( 
         
-        
-          
+          <> 
          
          <li className="nav-item">
             <a className="nav-link" href="#/CreateAccount/">Create Account</a>
@@ -48,9 +51,9 @@ function NavBar(){
           <li className="nav-item">
             <a className="nav-link" href="#/login/">Login</a>
           </li>
-          
-        
-           
+          </>
+          ):( 
+           <> 
                
           <li className="nav-item">
             <a className="nav-link" href="#/deposit/">Deposit</a>
@@ -69,15 +72,16 @@ function NavBar(){
           
            
             <li className="nav-item">
-          &nbsp;&nbsp;&nbsp;<span className="navbar-text">Welcome</span>
+            
+           <span className="navbar-text">Welcome<strong>{ctx.name}</strong></span>
           </li> 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button className="btn btn-outline-light" onClick={logout}>
+          
+          <button className="btn btn-outline-light logout" onClick={logout}>
               Log Out
             </button>
-            
-          
-            
+            </>
+           
+            ) }
           
         </ul>
         

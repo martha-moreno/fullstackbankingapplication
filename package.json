@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install      --prefix public && npm run build --prefix public"
-},
-  
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install      --prefix public && npm run build --prefix public"
+  },
   "author": "abel@mit.edu",
   "license": "MIT",
   "dependencies": {
@@ -15,6 +14,8 @@
     "express": "^4.16.3",
     "lowdb": "^1.0.0",
     "mongodb": "^3.6.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0"
   }
 }

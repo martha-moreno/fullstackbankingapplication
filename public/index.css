@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  .card{
+    margin-top: 50px;
+    overflow:hidden;
+    box-shadow:0 2px 10px gray;
+    border-radius: gray;
+  }
+  .card-header{
+    text-align: center;
+  }
+
+  .navbar-text{
+    margin-left: 25em;
+    
+  }
+
+  .logout{
+    margin-left: 3em;  
+  }
+
+  strong{
+      margin-left:2px;
+      font-size: 18px;
+  }
+
+  .message{
+      color: greenyellow;
+  }
+
+  

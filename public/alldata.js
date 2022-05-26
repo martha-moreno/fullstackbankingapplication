@@ -14,7 +14,13 @@ function AllData(){
     }, []);
 
     return (<>
+    
+    <NavBar/>
         <h5>All Data in Store:</h5>
         {data}
-    </>);
+        
+    </>
+    
+    
+    );
 }

@@ -7,13 +7,13 @@ function CreateAccount(){
   console.log('ctx.isloggedIn in createaccount-start', ctx.isLoggedIn)
   return (
     <>
-    
+    <NavBar/>
     <Card
       bgcolor="primary"
       header="Create Account"
       status={status}
       body={show ? 
-        <CreateForm setShow={setShow}/> : 
+        <CreateForm setShow={setShow} setIsLoggedIn={setIsLoggedIn}/> : 
         <CreateMsg setShow={setShow}/>}
     />
     </>
@@ -21,19 +21,11 @@ function CreateAccount(){
 }
 
 function CreateMsg(props){
-  const [isLoggedIn, setIsLoggedIn]   = React.useState(false);
-  const ctx= React.useContext(UserContext);
-  
-    
-  
-  
+
   return(<>
     <h5>Your account was successfully created</h5>
-    <button type="submit" 
-      className="btn btn-light" 
-      onClick={() => window.location.href = "#/"}>
-        Go to HomePage
-    </button>
+    {alert("Your account was successfully created.<br>You are now logged in!")}
+    {window.location.href = "#/"}
   </>);
 }
 
@@ -41,9 +33,9 @@ function CreateForm(props){
   const [name, setName]         = React.useState('');
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [isloggedIn, setIsLoggedIn]   = React.useState(false);
-  const [show, setShow]         = React.useState(true);
-  const [status, setStatus]     = React.useState(null);
+  //const [isloggedIn, setIsLoggedIn]   = React.useState(false);
+  //const [show, setShow]         = React.useState(true);
+  //const [status, setStatus]     = React.useState(null);
   const ctx= React.useContext(UserContext);
   
 
@@ -55,8 +47,7 @@ function CreateForm(props){
         var data = await res.json();    
         console.log(data);   
         props.setShow(false);
-    setIsLoggedIn(true);
-    ctx.isLoggedIn=true;
+    props.setIsLoggedIn(true);
     ctx.isLoggedIn=true;
             ctx.name=data.name;
             ctx.email=data.email;
@@ -64,7 +55,7 @@ function CreateForm(props){
             ctx.balance=data.balance;     
     })();
     
-    console.log('you are logged in from create account');
+    console.log('you are logged in from create account setIsLoggedIn', isLoggedIn);
     console.log('ctx.isLoggedIn in create account', ctx.isLoggedIn);
   }    
   

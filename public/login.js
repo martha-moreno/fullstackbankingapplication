@@ -2,7 +2,10 @@ function Login(props){
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState(null);
   
+  
   return (
+    <>
+      <NavBar/>
     
     <Card
       bgcolor="secondary"
@@ -10,32 +13,39 @@ function Login(props){
       status={status}
       body={show ? 
         <LoginForm setShow={setShow} setStatus={setStatus} /> :
-        <LoginMsg setShow={setShow} setStatus={setStatus} name={name}/>}
+        <LoginMsg setShow={setShow} setStatus={setStatus}/>}
     />
+    </>
   ) 
 }
 
 function LoginMsg(props){
   
+  const ctx= React.useContext(UserContext);
   
   return(<>
     <h5>WELCOME </h5>
-    <h6>You are now logged in</h6>
+    <h6>You are now logged in!</h6>
+    {console.log('ctx.isLoggedIn from longin loginmsg', ctx.isLoggedIn)}
+    {alert("You are now logged in")}
+
+    {window.location.href = "#/"}
     
     
-    <button type="submit" 
+    {/*<button type="submit" 
       className="btn btn-light" 
       onClick={() => window.location.href = "#/"}>
         Go to HomePage
-    </button>
+    </button>*/}
   </>);
 }
 
 function LoginForm(props){
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [show, setShow]         = React.useState(true);
-  const [status, setStatus]     = React.useState(null);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  //const [show, setShow]         = React.useState(true);
+ // const [status, setStatus]     = React.useState(null);
   const ctx= React.useContext(UserContext);
   function handle(){
     fetch(`/account/login/${email}/${password}`)
@@ -45,6 +55,7 @@ function LoginForm(props){
             const data = JSON.parse(text);
             props.setStatus('');
             props.setShow(false);
+            //props.setIsLoggedIn(true);
             console.log('JSON:', data);
             ctx.isLoggedIn=true;
             ctx.name=data.name;
