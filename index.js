@@ -1,11 +1,15 @@
 
 var express = require('express');
+const mongoose=require("mongoose");
+const bodyParser=require("body-parser");
+require ("dotenv").config();
 var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
 const e = require('express');
 const swaggerJsDoc=require('swagger-jsdoc');
 const swaggerUI=require('swagger-ui-express');
+
 
 const swaggerOptions = {
     swaggerDefinition:{
@@ -135,23 +139,11 @@ app.get('/account/all', function (req, res) {
     });
 });
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('public/build'));
-}
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'public/build', 'index.html'));
-});
-//Serve static assets if in production
-//if(process.env.NODE_ENV ==='production'){
-//set a static folder
-//app.use(express.static('public/build'));
 
-//app.get('*', (req, resp)=>{
- //   res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
-
-//})
-//}
 
 const port = process.env.PORT || 3000;
+const path = require("path");
+
+
 app.listen(port);
 console.log('Running on port: ' + port);
