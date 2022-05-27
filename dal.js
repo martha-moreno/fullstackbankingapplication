@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-MONGODB_URI="mongodb+srv://marthagmoreno:2Jv39ra73SBmQ2hG@fullstackbanking.v87b1.mongodb.net/?retryWrites=true&w=majority";
-const url         = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const url         = 'mongodb://localhost:27017';
 let db            = null;
  
 // connect to mongo
@@ -15,7 +14,7 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
 function create(name, email, password){
     return new Promise((resolve, reject) => {    
         const collection = db.collection('users');
-        const doc = {name, email, password, balance: 0, isLoggedIn:true};
+        const doc = {name, email, password, balance: 0};
         collection.insertOne(doc, {w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);
         });    

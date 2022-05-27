@@ -28,7 +28,6 @@ app.use('/apiDocs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 // used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
-//added to fix
 
 // create user account
 app.get('/account/create/:name/:email/:password', function (req, res) {
