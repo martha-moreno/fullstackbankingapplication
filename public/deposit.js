@@ -49,11 +49,12 @@ function DepositForm(props){
     .then(text => {
       try {
         const data = JSON.parse(text);
-        props.setStatus(JSON.stringify(data.value));
+        //props.setStatus(JSON.stringify(data.value));
         props.setShow(false);
         ctx.isLoggedIn=true;
+        ctx.balance=data.value.balance;
         //console.log('JSON:', data);
-        console.log('data.value',JSON.stringify(data.value.balance));
+        //console.log('data.value',JSON.stringify(data.value.balance));
 
 
         

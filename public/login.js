@@ -27,7 +27,7 @@ function LoginMsg(props){
     <h5>WELCOME </h5>
     <h6>You are now logged in!</h6>
     {console.log('ctx.isLoggedIn from longin loginmsg', ctx.isLoggedIn)}
-    {/*alert("You are now logged in")*/}
+    {alert("You are now logged in")}
 
     {window.location.href = "#/"}
     

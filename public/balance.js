@@ -38,7 +38,8 @@ function BalanceMsg(props){
       }}>
         Check balance again
     </button>*/
-    console.log('balance',ctx.balance)}
+    //console.log('balance',ctx.balance)
+    }
   </>);
 }
 
@@ -53,11 +54,12 @@ function BalanceForm(props) {
       .then((text) => {
         try {
           const data = JSON.parse(text);
-          props.setStatus(text);
+          //props.setStatus(text);
           props.setShow(false);
           //setBalance(user.balance);
+          ctx.balance=data.value.balance;
         } catch (err) {
-          props.setStatus(text);
+          //props.setStatus(text);
           console.log("err:", text);
         }
       });
