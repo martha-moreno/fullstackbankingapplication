@@ -1,8 +1,6 @@
 
 var express = require('express');
 const mongoose=require("mongoose");
-const bodyParser=require("body-parser");
-require ("dotenv").config();
 var app     = express();
 var cors    = require('cors');
 var dal     = require('./dal.js');
@@ -30,7 +28,7 @@ app.use(express.static('public'));
 app.use(cors());
 
 // create user account
-app.get('/account/create/:name/:email/:password', function (req, res) {
+app.get('/account/create/:name/:email/:password', async function (req, res) {
 
     // check if account exists
     dal.find(req.params.email).
