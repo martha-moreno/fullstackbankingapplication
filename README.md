@@ -10,9 +10,7 @@
 </p>
 
 # Description
-> This is my first fullstack application using MERN stack. A basic online banking application that allows to create user accounts, login into the user's profile, make a deposit, a withdraw, check balance and retrieve all active users. 
-
-<img width="1111" alt="Screenshot 2024-01-31 at 2 08 44 PM" src="https://github.com/martha-moreno/BankingApp/assets/88118070/280c2e95-cfbe-4512-85bb-e0b9ca975c95">
+> This Project is a full-stack web application using the MERN Stack. A basic online banking application that allows to create user accounts, login into the user's profile, make a deposit, a withdraw, check balance and retrieve all active users. 
 
 
 # Installation Guidelines
