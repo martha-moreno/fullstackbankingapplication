@@ -8,13 +8,13 @@
 ## Clone this repository 
 
 ```sh
-git clone https://github.com/martha-moreno/fullstack-banking-app.git
+git clone https://github.com/martha-moreno/fullstackbankingapplication.git
 ```
 
 ## To view the files
 
 ```sh
-cd fullstack-banking-app
+cd fullstackbankingapplication
 ```
 ## Install
 
