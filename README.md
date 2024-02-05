@@ -1,13 +1,4 @@
 <h1 align="center">Welcome to Online Banking App 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://opensource.org/licenses/MIT" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/marthacoding" target="_blank">
-    <img alt="Twitter: marthacoding" src="https://img.shields.io/twitter/follow/marthacoding.svg?style=social" />
-  </a>
-</p>
 
 # Description
 > This Project is a full-stack web application using the MERN Stack. A basic online banking application that allows to create user accounts, login into the user's profile, make a deposit, a withdraw, check balance and retrieve all active users. 
