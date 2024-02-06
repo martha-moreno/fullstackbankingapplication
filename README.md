@@ -34,7 +34,7 @@ node index.js
 # Project in Action
 https://user-images.githubusercontent.com/88118070/163884358-1a1da130-2b4b-4ce9-9c14-61b8cb790076.mp4
 
-## Built With MERN stack
+# Built With 
 >- React JS
 >- Bootstrap 5
 >- NodeJS
@@ -59,6 +59,6 @@ https://user-images.githubusercontent.com/88118070/163884358-1a1da130-2b4b-4ce9-
 >- MIT
 
 
-## Contact
+### Contact
  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/martha-moreno/martha-moreno.github.io)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/martha-gissela-moreno/)  
 
